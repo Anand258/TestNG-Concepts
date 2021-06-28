@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="practice suite">
+
+    <listeners>
+        <listener class-name="com.utils.ExtentReporterNG" />
+    </listeners>
+    <listeners>
+        <listener class-name="com.utils.MyTransformer" />
+    </listeners>
+
+
+    <test name="testng test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="http://gmail.google.com"/>
+        <parameter name="emailId" value="anand.singh@gmail.com"/>
+
+        <classes>
+            <class name="com.concepts.RetryFeature"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

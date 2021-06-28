@@ -1,0 +1,62 @@
+What is testNG ?
+TestNG is a testing framework designed to simplify a broad range of testing needs from unit testing to integration testing.
+NG means Test Next Generation.
+
+What are the advantage of TestNG ?
+- testng provides parallel execution of test methods.
+- it allows to define dependency of one test method over other method.
+- it allows to assign priority to test methods.
+- it allows grouping of test methods into test groups.
+- it has support for parameterizing test cases using @Parameters annotation.
+- it allows data driven testing using @Dataprovider annotation.
+- it has different assertions that helps in checking the expected and actual results.
+- easily integrate with jenkins.
+- it generates detailed html reports.
+
+What are all the annotation available in TestNG ?
+@BeforeTest
+@AfterTest
+@BeforeClass
+@AfterClass
+@BeforeMethod
+@AfterMethod
+@BeforeSuite
+@AfterSuite
+@BeforeGroup
+@AfterGroup
+@Test
+@Dataprovider
+@Parameters
+
+What is the correct order of the TestNG.xml tags ?
+<suite>
+<test>
+<classes>
+<class>
+<methods>
+
+We can use include and exclude tags in testng xml :
+Include tag :
+        <class name="day1">
+              <methods>
+                   <exclude name="test2"></exclude>
+              </methods>
+        </class>
+
+Exclude tag :
+        <class name="day1">
+              <methods>
+                   <exclude name="test2"></exclude>
+              </methods>
+        </class>
+
+include/exclude Regex
+        <class name="day1">
+                <methods>
+                    <include name="test.*"></include>
+                </methods>
+        </class>
+
+
+
+
