@@ -6,7 +6,13 @@
 
 package com.concepts;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 public class TestngBasics {
 
@@ -33,13 +39,23 @@ public class TestngBasics {
 
     // test cases -- starting with Test
     @Test //5
-    public void googleTitleTest(){
+    public void googleTitleTest() throws IOException {
         System.out.println("Google title test");
+        Properties prop = new Properties();
+        FileInputStream fin = new FileInputStream("/Users/anasingh/IdeaProjects/TestNG-Concepts/src/test/Resources/data.properties");
+        prop.load(fin);
+        System.out.println(prop.getProperty("browser"));
+        System.out.println(prop.getProperty("url"));
+        prop.setProperty("browser", "Chrome");
+        System.out.println(prop.getProperty("browser"));
+        FileOutputStream fout = new FileOutputStream("/Users/anasingh/IdeaProjects/TestNG-Concepts/src/test/Resources/data.properties");
+        prop.store(fout, null);
     }
 
     @Test //5
     public void searchTest(){
         System.out.println("search test");
+        Assert.fail();
     }
 
     // post condition annotation -- starting with After

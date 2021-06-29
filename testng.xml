@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="practice suite">
-
+<suite name="All Test Suite">
     <listeners>
-        <listener class-name="com.utils.ExtentReporterNG" />
+        <listener class-name="com.utils.Listeners"></listener>
     </listeners>
-    <listeners>
-        <listener class-name="com.utils.MyTransformer" />
-    </listeners>
-
-
-    <test name="testng test">
-        <parameter name="browser" value="chrome"/>
-        <parameter name="url" value="http://gmail.google.com"/>
-        <parameter name="emailId" value="anand.singh@gmail.com"/>
-
+    <test name="listener-test" parallel="classes" thread-count="2">
         <classes>
-            <class name="com.concepts.RetryFeature"/>
+            <class name="com.concepts.TestngBasics"></class>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>
